@@ -36,6 +36,8 @@
 		 * Navbar
 		/* ---------------------------------------------- */
 
+		
+
 		$('.header').sticky({
 			topSpacing: 0
 		});
@@ -45,27 +47,6 @@
 			offset: 70
 		})
 
-        
-        /* ---------------------------------------------- /*
-		 * Skills
-        /* ---------------------------------------------- */    
-        //var color = $('#home').css('backgroundColor');
-
-        $('.skills').waypoint(function(){
-            $('.chart').each(function(){
-            $(this).easyPieChart({
-                    size:140,
-                    animate: 2000,
-                    lineCap:'butt',
-                    scaleColor: false,
-                    barColor: '#FF5252',
-                    trackColor: 'transparent',
-                    lineWidth: 10
-                });
-            });
-        },{offset:'80%'});
-        
-        
         /* ---------------------------------------------- /*
 		 * Quote Rotator
 		/* ---------------------------------------------- */
@@ -128,6 +109,20 @@
 			return pattern.test(emailAddress);
 		};
 
+
+		/* ---------------------------------------------- /*
+		 * Contact form effects
+		/* ---------------------------------------------- */
+
+		$("input").focus(function(){
+			$(this).addClass("animated");
+		});
+
+		$("textarea").focus(function(){
+			$(this).addClass("animated");
+		});
+
+
 		/* ---------------------------------------------- /*
 		 * Contact form ajax
 		/* ---------------------------------------------- */
@@ -155,7 +150,7 @@
 			else {
 					 $.ajax({
 							type        : 'POST', // define the type of HTTP verb we want to use (POST for our form)
-							url         : 'assets/php/contact.php', // the url where we want to POST
+							url         : '../php/contact.php', // the url where we want to POST
 							data        : formData, // our data object
 							dataType    : 'json', // what type of data do we expect back from the server
 							encode      : true,

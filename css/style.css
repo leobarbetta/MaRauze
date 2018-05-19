@@ -1,12 +1,6 @@
 @import url(http://fonts.googleapis.com/css?family=Raleway:400,300,500,700,800);
 @import url(http://fonts.googleapis.com/css?family=Lobster);
-
-/*!
- * Clean v2.0.0
- * Homepage: http://scripteden.com
- * Copyright 2015 Script Eden
- * Licensed under MIT
-*/
+@import url(https://fonts.googleapis.com/css?family=Anton);
 
 body {
 	font: 300 14px/1.8 'Raleway', sans-serif;
@@ -109,7 +103,6 @@ h6 {
 /* ---------------------------------------------- */
 
 .btn,
-.iconbox,
 .progress,
 #filter li,
 .scroll-up a,
@@ -143,13 +136,15 @@ h6 {
 
 .form-control {
 	background: #FFF;
-	border: 1px solid #D8E1E4;
+	border: 1px solid #9e9e9e;
 	font-size: 12px;
 	padding: 0 15px;
 }
 
 .form-control:focus{
-    border-color: rgba(135, 135, 135, 0.7);
+    border-color: #424242;
+    -webkit-animation-name: pulse;
+  	animation-name: pulse;
 }
 
 .input-lg,
@@ -169,7 +164,6 @@ textarea.form-control {
     max-width: 100%;
     min-width: 100%;
 }
-
 /* ---------------------------------------------- /*
  * Custom button style
 /* ---------------------------------------------- */
@@ -230,11 +224,11 @@ textarea.form-control {
 /* ---------------------------------------------- */
 
 .pfblock {
-	padding: 120px 0 100px;
+	padding: 100px 0 80px;
 }
 
 .pfblock-gray {
-	background: #f5f5f5;
+	background: #757575;
 }
 
 .pfblock-image {
@@ -272,13 +266,36 @@ textarea.form-control {
 }
 
 .pfblock-title{
-    font-weight: 800;
+	font-family: 'Anton', sans-serif;
+	font-weight: 100;
+	text-shadow: 1px 1px 1px grey
 }
 
 .pfblock-subtitle {
 	font-family: Raleway, "Times New Roman", Times, sans-serif;
 	font-style: normal;
 	font-size: 18px;
+}
+
+.pfblock-title-invert{
+	font-family: 'Anton', sans-serif;
+	font-weight: 100;
+    color: #fafafa;
+    text-shadow: 1px 1px 1px #ef5350;
+}
+
+.pfblock-subtitle-invert{
+	font-family: Raleway, "Times New Roman", Times, sans-serif;
+	font-style: normal;
+	font-size: 18px;
+	color: #e0e0e0;
+}
+
+.pfblock-line-invert {
+	background: #fafafa;
+	width: 100px;
+	height: 1px;
+	margin: 30px auto;
 }
 
 .pfblock-line {
@@ -355,18 +372,6 @@ textarea.form-control {
 	padding: 0;
 }
 
-.home-overlay {
-    background-color: rgba(44, 62, 80, 0.3);
-    background-image: url("../images/pattern.png");
-    background-repeat: repeat;
-    height: 100%;
-    left: 0;
-    position: absolute;
-    top: 0;
-    width: 100%;
-    z-index: 0;
-}
-
 .intro {
 	position: absolute;
 	width: 100%;
@@ -385,24 +390,24 @@ textarea.form-control {
     font-weight: 800;
 }
 
-.start {
-	font-family: Raleway, "Times New Roman", Times, sans-serif;
-	font-size: 16px;
-	font-style: normal;
-	text-transform: none;
-	margin: 15px 0;
+#logo-cover{
+	width: 50%;
+	height: 50%;
+	position: relative;
+	top: 90px;
 }
+
 
 /* ---------------------------------------------- /*
  * Servise
 /* ---------------------------------------------- */
-
 .iconbox {
 	background: #fff;
 	border-bottom: 1px solid #d4d4d4;
 	text-align: center;
 	padding: 40px 20px;
-	margin: 0 0 20px;
+	margin: 0 0 30px;
+	min-height: 270px;	
 }
 
 .iconbox-icon {
@@ -410,41 +415,103 @@ textarea.form-control {
 	font-size: 32px;
 	color: #222;
 }
+.iconbox-icon-solution {
+	margin: 0 auto 15px;
+	font-size: 42px;
+	color: #EF5350;
+
+}
 
 .iconbox-title {
 	margin: 0 0 15px;
-	padding: 0;
+	padding: 0;	
 }
 
+.iconbox-about{
+	border-bottom: 7px solid #EF5350;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.iconbox-about,
+.iconbox-about h3,
+.iconbox-about span
+{
+	background-color: #757575;
+	color: white;	
+}
+
+#solution .iconbox{
+	min-height: 330px;
+}
+
+[p="empresa"]{
+	display: 	hide;
+}
 /* ---------------------------------------------- /*
- * Skills
+ * Team
 /* ---------------------------------------------- */
 
-.chart {
-    display: inline-block;
-    height: 140px;
-    margin: 50px 0;
-    position: relative;
-    text-align: center;
-    width: 140px;
+#team{
+	background-image: url(../images/cubes-pattern.png);
+	background-attachment: fixed;
 }
-.chart canvas {
-    left: 0;
-    position: absolute;
-    top: 0;
+
+.team-social-links {
+	list-style: none;
+	padding: 10px 0 0;
+	margin: 0 0 20px;
 }
-.percent {
-    display: inline-block;
-    font-size: 25px;
-    font-weight: 300;
-    line-height: 140px;
-    z-index: 2;
+
+.team-social-links li {
+	display: inline-block;
+	margin: 5px;	
+	transition: transform 1s;
 }
-.percent:after {
-    content: "%";
-    font-size: 50%;
-    margin-left: 0.1em;
+
+.team-social-links li:hover {
+	transform: scale(1.2);
 }
+
+.team-social-links a {
+	width: 36px;
+	height: 36px;
+	display: block;
+	line-height: 35px;
+	text-align: center;
+	border: 1px solid #ef5350;
+	-webkit-border-radius: 3px;
+	   -moz-border-radius: 3px;
+			border-radius: 3px;
+	font-size: 18px;
+	color: #ef5350;
+}
+
+
+.team-member{
+	width: 80%;
+	margin-bottom: 20px;
+}
+
+.team-facebook:hover{
+	border: none;
+	background-color: #3B5998;
+	color: #FFFFFF;
+	border: 1px solid transparent;
+}
+.team-instagram:hover{
+	border: none;
+	background-color: #D5C2B1;
+	color: #604844;	
+	border: 1px solid #604844;
+}
+.team-linkedin:hover{
+	border: none;
+	background-color: #007BB6;
+	color: #FFFFFF;
+	border: 1px solid transparent;
+}
+
+
 
 /* ---------------------------------------------- /*
  * Contact
@@ -452,6 +519,13 @@ textarea.form-control {
 
 .ajax-response {
 	text-align: center;
+}
+
+#contact-form button:hover,
+#contact-form button:focus{
+	transition: background-color 1s;
+	background-color: #0288d1;
+	color: white;
 }
 
 /* ---------------------------------------------- /*
@@ -496,16 +570,16 @@ textarea.form-control {
 	display: block;
 	line-height: 35px;
 	text-align: center;
-	border: 1px solid rgba(255, 255, 255, .1);
+	border: 1px solid white;
 	-webkit-border-radius: 3px;
 	   -moz-border-radius: 3px;
 			border-radius: 3px;
 	font-size: 14px;
-	color: rgba(255, 255, 255, .2);
+	color: #ef5350;
 }
 
 .social-links a:hover {
-	border: 1px solid rgba(255, 255, 255, .5);
+	border: 1px solid #ef5350;
 	color: rgba(255, 255, 255, .8);
 }
 
@@ -514,10 +588,10 @@ textarea.form-control {
 /* ---------------------------------------------- */
 
 .header {
-	border-bottom: 1px solid #f5f5f5;
+	border-bottom: 1px solid #CC0D10;
 	position: relative;
 	width: 100%;
-	z-index: 998;
+	z-index: 998;	
 }
 
 .navbar-custom {
@@ -525,21 +599,46 @@ textarea.form-control {
 	border-radius: 0;
 	margin: 0;
 	text-transform: uppercase;
-	font-family: Raleway, sans-serif;
+	font-family: Raleway, sans-serif;	
+}
+
+#navbar-brand{
+	position: absolute;
+	width: 110px;
+	top: -3px;
+}
+
+@media screen and (min-width: 480px) {
+    #navbar-brand-mobile{
+    	display: none;
+    }
+}
+
+@media screen and (max-width: 480px) {
+	#navbar-brand{
+    	display: none;
+    }
+    #navbar-brand-mobile{
+    	display: inline-block;
+    	position: absolute;
+    	width: 120px;
+    	top: -15px;
+    }
 }
 
 .navbar-custom,
 .navbar-custom .dropdown-menu {
-	background: #fff;
+	background-color: #ef5350;
 	padding: 0;
 }
 
 .navbar-custom .navbar-brand,
 .navbar-custom .navbar-nav > li > a,
 .navbar-custom .navbar-nav .dropdown-menu > li > a {
-	font-size: 11px;
+	font-size: 12px;
 	letter-spacing: 3px;
-	color: #222;
+	color: #f5f5f5;
+	font-weight: bold;
 }
 
 .navbar-custom .nav li.active,
@@ -548,7 +647,7 @@ textarea.form-control {
 .navbar-custom .navbar-nav > li.active a {
 	background: none;
 	outline: 0;
-	color: #E7746F;
+	color: #424242;
 }
 
 .navbar-custom .navbar-brand {
@@ -614,7 +713,7 @@ textarea.form-control {
 	position: absolute;
 	left: 50%;
 	bottom: 40px;
-	border: 2px solid #fff;
+	border: 2px solid #ef5350;
 	border-radius: 50%;
 	height: 50px;
 	width: 50px;
@@ -626,7 +725,7 @@ textarea.form-control {
 
 .scroll-down span{
     position: relative;
-    color: #fff;
+    color: #ef5350;
     -webkit-animation-name: drop;
 	-webkit-animation-duration: 1s;
 	-webkit-animation-timing-function: linear;
@@ -658,7 +757,7 @@ textarea.form-control {
 /* ---------------------------------------------- */
 
 #preloader {
-	background: #FFF;
+	background: black;
 	bottom: 0;
 	left: 0;
 	position: fixed;
@@ -671,12 +770,12 @@ textarea.form-control {
 	background-image: url(../images/preloader.gif);
 	background-position: center;
 	background-repeat: no-repeat;
-	height: 200px;
+	height: 480px;
 	left: 50%;
-	margin: -100px 0 0 -100px;
+	margin: -240px 0 0 -240px;
 	position: absolute;
 	top: 50%;
-	width: 200px;
+	width: 480px;
 }
 
 /* ---------------------------------------------- /*
